@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/todo-app-habsida/static/css/main.48dc6328.css",
+    "main.js": "/todo-app-habsida/static/js/main.c7c86a2a.js",
+    "index.html": "/todo-app-habsida/index.html",
+    "main.48dc6328.css.map": "/todo-app-habsida/static/css/main.48dc6328.css.map",
+    "main.c7c86a2a.js.map": "/todo-app-habsida/static/js/main.c7c86a2a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.48dc6328.css",
+    "static/js/main.c7c86a2a.js"
+  ]
+}
