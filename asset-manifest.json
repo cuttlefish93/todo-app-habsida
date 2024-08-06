@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/todo-app-habsida/static/css/main.48dc6328.css",
-    "main.js": "/todo-app-habsida/static/js/main.c7c86a2a.js",
+    "main.js": "/todo-app-habsida/static/js/main.fe66842d.js",
     "index.html": "/todo-app-habsida/index.html",
     "main.48dc6328.css.map": "/todo-app-habsida/static/css/main.48dc6328.css.map",
-    "main.c7c86a2a.js.map": "/todo-app-habsida/static/js/main.c7c86a2a.js.map"
+    "main.fe66842d.js.map": "/todo-app-habsida/static/js/main.fe66842d.js.map"
   },
   "entrypoints": [
     "static/css/main.48dc6328.css",
-    "static/js/main.c7c86a2a.js"
+    "static/js/main.fe66842d.js"
   ]
 }
