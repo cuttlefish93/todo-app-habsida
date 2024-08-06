@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import { useState } from 'react'
+import PropTypes from 'prop-types'
 
 function NewTaskForm(props) {
-	const { addTodo } = props;
-	const [todoValue, setTodoValue] = useState('');
+	const { addTodo } = props
+	const [todoValue, setTodoValue] = useState('')
 
 	function addTodoEventHandler(e) {
-		if (e.key !== 'Enter') return;
-		addTodo(todoValue);
-		setTodoValue('');
+		if (e.key !== 'Enter') return
+		addTodo(todoValue)
+		setTodoValue('')
 	}
 
 	return (
@@ -17,11 +18,15 @@ function NewTaskForm(props) {
 				placeholder='What needs to be done?'
 				autoFocus
 				value={todoValue}
-				onInput={(e) => setTodoValue(e.target.value)}
+				onInput={e => setTodoValue(e.target.value)}
 				onKeyDown={addTodoEventHandler}
 			/>
 		</>
-	);
+	)
 }
 
-export default NewTaskForm;
+NewTaskForm.propTypes = {
+	addTodo: PropTypes.func,
+}
+
+export default NewTaskForm

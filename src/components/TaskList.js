@@ -1,4 +1,5 @@
-import Task from './Task';
+import PropTypes from 'prop-types'
+import Task from './Task'
 
 function TaskList(props) {
 	const {
@@ -7,12 +8,12 @@ function TaskList(props) {
 		deleteTodo,
 		editedTodo,
 		updateEditedTodo,
-	} = props;
+	} = props
 
 	return (
 		<ul className='todo-list'>
-			{todos.map((todo) => {
-				if (!todo.isVisible) return '';
+			{todos.map(todo => {
+				if (!todo.isVisible) return ''
 				return (
 					<Task
 						key={todo.id}
@@ -22,10 +23,18 @@ function TaskList(props) {
 						editedTodo={editedTodo}
 						updateEditedTodo={updateEditedTodo}
 					/>
-				);
+				)
 			})}
 		</ul>
-	);
+	)
 }
 
-export default TaskList;
+TaskList.propType = {
+	todos: PropTypes.arrayOf(PropTypes.object),
+	toggleCompletedTodo: PropTypes.func,
+	deleteTodo: PropTypes.func,
+	editedTodo: PropTypes.func,
+	updateEditedTodo: PropTypes.func,
+}
+
+export default TaskList

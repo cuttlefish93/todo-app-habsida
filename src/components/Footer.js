@@ -1,7 +1,8 @@
-import TasksFilter from './TasksFilter';
+import PropTypes from 'prop-types'
+import TasksFilter from './TasksFilter'
 
 function Footer(props) {
-	const { clearCompletedTodos, unfinishedTodosCount, getFilteredTodos } = props;
+	const { clearCompletedTodos, unfinishedTodosCount, getFilteredTodos } = props
 
 	return (
 		<footer className='footer'>
@@ -15,7 +16,13 @@ function Footer(props) {
 				Clear completed
 			</button>
 		</footer>
-	);
+	)
 }
 
-export default Footer;
+Footer.propType = {
+	clearCompletedTodos: PropTypes.func,
+	unfinishedTodosCount: PropTypes.number,
+	getFilteredTodos: PropTypes.func,
+}
+
+export default Footer

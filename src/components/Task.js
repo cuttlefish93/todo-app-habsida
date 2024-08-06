@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { formatDistanceToNow } from 'date-fns';
+import { useState } from 'react'
+import { formatDistanceToNow } from 'date-fns'
+import PropTypes from 'prop-types'
 
 function Task(props) {
 	const {
@@ -8,13 +9,14 @@ function Task(props) {
 		deleteTodo,
 		editedTodo,
 		updateEditedTodo,
-	} = props;
+	} = props
 
-	const [newText, setNewText] = useState(todo.text);
+	const [newText, setNewText] = useState(todo.text)
+	const [isChecked, setIsChecked] = useState(todo.isCompleted)
 
 	function updateEditedTodoEventHandler(e, todoId) {
-		if (e.key !== 'Enter') return;
-		updateEditedTodo(newText, todoId);
+		if (e.key !== 'Enter') return
+		updateEditedTodo(newText, todoId)
 	}
 
 	return (
@@ -27,7 +29,9 @@ function Task(props) {
 				<input
 					className='toggle'
 					type='checkbox'
-					onClick={() => toggleCompletedTodo(todo.id)}
+					checked={isChecked}
+					onChange={() => setIsChecked(!isChecked)}
+					onClick={e => toggleCompletedTodo(todo.id)}
 				/>
 				<label>
 					<span className='description'>{todo.text}</span>
@@ -50,11 +54,19 @@ function Task(props) {
 				type='text'
 				className='edit'
 				value={newText}
-				onInput={(e) => setNewText(e.target.value)}
-				onKeyDown={(e) => updateEditedTodoEventHandler(e, todo.id)}
+				onInput={e => setNewText(e.target.value)}
+				onKeyDown={e => updateEditedTodoEventHandler(e, todo.id)}
 			></input>
 		</li>
-	);
+	)
 }
 
-export default Task;
+Task.propType = {
+	todo: PropTypes.object,
+	toggleCompletedTodo: PropTypes.func,
+	deleteTodo: PropTypes.func,
+	editedTodo: PropTypes.func,
+	updateEditedTodo: PropTypes.func,
+}
+
+export default Task
